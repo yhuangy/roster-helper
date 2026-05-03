@@ -115,10 +115,6 @@ if "roster" not in st.session_state:
 # Sidebar: upload and setup
 # -----------------------------
 
-st.sidebar.title("Exam Roster Lookup")
-st.sidebar.caption("Upload a seating arrangement and use the main tabs for exam operations.")
-
-st.sidebar.markdown("---")
 st.sidebar.subheader("Upload a seathing arrangement")
 
 uploaded_file = st.sidebar.file_uploader(
@@ -179,7 +175,7 @@ if st.session_state.roster is not None:
     st.sidebar.success(f"Roster ready: {len(st.session_state.roster)} students")
 
 st.sidebar.markdown("---")
-if st.sidebar.button("Reset app and remove data"):
+if st.sidebar.button("Reset and remove data"):
     st.session_state.raw_df = None
     st.session_state.roster = None
     
@@ -192,17 +188,17 @@ if st.sidebar.button("Reset app and remove data"):
 # Main app
 # -----------------------------
 
-st.title("Exam Roster Lookup Tool")
+st.title("Exam Roster Lookup")
 
 st.markdown(
     """
-    Upload the seating arrangement, map the key columns, update any reseated students,
+    Upload the seating arrangement, map key columns, update any reseated students,
     and search by Matric, NUS ID, or Student Name for end-of-exam checks.
     """
 )
 
 tab_update, tab_search = st.tabs(
-    ["1. Update seat changes", "2. Search student"]
+    ["1. Update seat changes", "2. Search for student"]
 )
 
 # -----------------------------
