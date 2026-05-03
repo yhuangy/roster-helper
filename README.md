@@ -4,7 +4,7 @@ This is designed as a reusable tool to manage exam seating, reseating, and end-o
 
 ## How to use it
 
-1. Upload an official seating report from the seating portal.
+1. Upload a seating arrangement.
 2. Map the required columns to create a working roster.
    - student identifiers
    - assigned seat number
@@ -13,4 +13,4 @@ This is designed as a reusable tool to manage exam seating, reseating, and end-o
 
 At the end of the session, download the roster if needed, and reset the app to clear all data.
 
-*Note: This app operates locally and does not transmit data externally. Please ensure that any data handling compiles with the institution's data governace and privacy policies.*
+Designed for **local use** only. All files remain on the local machine. Users are responsible for ensuring compliance with institution's data policies.

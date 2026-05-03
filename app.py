@@ -70,7 +70,6 @@ def build_roster(df, matric_col, nus_id_col, name_col, seat_col):
 
     roster["current_seat"] = roster["original_seat"]
     roster["seat_changed"] = False
-    #roster["change_reason"] = ""
     roster["last_updated"] = ""
     return roster
 
@@ -117,10 +116,10 @@ if "roster" not in st.session_state:
 # -----------------------------
 
 st.sidebar.title("Exam Roster Lookup")
-st.sidebar.caption("Upload the official seating report once, then use the main tabs for exam operations.")
+st.sidebar.caption("Upload a seating arrangement and use the main tabs for exam operations.")
 
 st.sidebar.markdown("---")
-st.sidebar.subheader("Upload official seating report")
+st.sidebar.subheader("Upload a seathing arrangement")
 
 uploaded_file = st.sidebar.file_uploader(
     "Upload CSV or Excel file",
@@ -197,8 +196,8 @@ st.title("Exam Roster Lookup Tool")
 
 st.markdown(
     """
-    Upload the official seating report, map the key columns, update any reseated students,
-    and search by Matric Number, NUS ID, or Student Name during end-of-exam checks.
+    Upload the seating arrangement, map the key columns, update any reseated students,
+    and search by Matric, NUS ID, or Student Name for end-of-exam checks.
     """
 )
 
@@ -220,7 +219,7 @@ with tab_update:
     else:
         search_input = st.text_input(
             "Use this box when a student is reseated, for example because they requested a charging station.",
-            placeholder="To find student to update, please enter their Matric Number of Student Name",
+            placeholder="To find student to update, please enter their Matric Number or Name",
             key="update_search",
         )
 
@@ -314,7 +313,6 @@ with tab_search:
                         "original_seat": row["original_seat"],
                         "current_seat": row["current_seat"],
                         "seat_changed": row["seat_changed"],
-                        #"change_reason": row["change_reason"],
                     })
                 else:
                     for _, row in item_matches.iterrows():
@@ -326,7 +324,6 @@ with tab_search:
                             "original_seat": row["original_seat"],
                             "current_seat": row["current_seat"],
                             "seat_changed": row["seat_changed"],
-                            #"change_reason": row["change_reason"],
                         })
 
             output_df = format_display(output_rows)
