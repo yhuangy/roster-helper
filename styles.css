@@ -1,0 +1,45 @@
+/* styles.css */
+
+/* Increase overall font size */
+html, body, [class*="css"] {
+    font-size: 18px;
+}
+
+/* Main container spacing */
+.block-container {
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+/* Title */
+h1 {
+    font-size: 36px !important;
+    font-weight: 700;
+}
+
+/* Section headers */
+h2, h3 {
+    font-size: 26px !important;
+    font-weight: 600 !important;
+}
+
+/* Dataframe text */
+[data-testid="stDataFrame"] {
+    font-size: 16px;
+}
+
+/* Buttons */
+button {
+    font-size: 16px !important;
+    font-weight: 500 !important;
+}
+
+/* Radio / pills */
+div[role="radiogroup"] label {
+    font-size: 16px !important;
+}
+
+/* Make radio buttons look cleaner */
+div[role="radiogroup"] {
+    gap: 20px;
+}
