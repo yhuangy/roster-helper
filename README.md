@@ -5,11 +5,11 @@ This is designed as a reusable tool to manage exam seating, reseating, and end-o
 ## How to use it
 
 1. Upload a seating arrangement.
-2. Map the required columns to create a working roster.
+2. Map the required columns to create a working roster:
    - student identifiers
    - assigned seat number
 3. Update seat changes as needed (e.g., when students are moved to charging stations).
-4. Use one or more identifiers to quickly retrieve the corresponding seat assignments.
+4. Retrieve the corresponding seat assignments based on student identifier(s).
 
 At the end of the session, download the roster if needed, and reset the app to clear all data.
 
