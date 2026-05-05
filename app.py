@@ -268,9 +268,18 @@ with tab_update:
                         st.session_state.roster.to_csv(SAVE_PATH, index=False)
 
         st.markdown("### Current roster")
-        display_results = format_display(st.session_state.roster)
-        st.dataframe(display_results, use_container_width=True, height=750)
+        roster = st.session_state.roster.copy()
 
+        roster = roster.sort_values(
+            by=["seat_changed", "current_seat"],
+            ascending=[False, True],
+            key=lambda col: pd.to_numeric(col, errors="coerce") if col.name == "current_seat" else col
+        )
+        
+        display_results = format_display(roster)
+
+        st.dataframe(display_results, use_container_width=True, height=750)
+        
 # -----------------------------
 # Tab 2: Search
 # -----------------------------

@@ -73,12 +73,13 @@ def search_roster(roster, query):
     return roster[searchable.str.contains(re.escape(query_clean), na=False)]
 
 def format_display(df):
-    return df.rename(columns={
-        "matriculation_number": "Matric Number",
-        "nus_id": "NUS ID",
-        "student_name": "Student",
-        "original_seat": "Original Seat",
-        "current_seat": "Current Seat",
-        "seat_changed": "Seat Changed",
-        "last_updated": "Last Updated",
-    })
+#    return df.rename(columns={
+#        "matriculation_number": "Matric Number",
+#        "nus_id": "NUS ID",
+#       "student_name": "Student",
+#        "original_seat": "Original Seat",
+#        "current_seat": "Current Seat",
+#        "seat_changed": "Seat Changed",
+#        "last_updated": "Last Updated",
+#    })
+    return df
